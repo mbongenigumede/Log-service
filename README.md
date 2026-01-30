@@ -13,7 +13,7 @@ It provides:
 ---
 
 ## Architecture
-
+```markdown
 Client
 |
 | HTTP (Lambda Function URL)
@@ -50,7 +50,7 @@ HTTP GET.
 - **Query**: `ScanIndexForward=false` + `Limit=100` → retrieves newest logs efficiently
 
 ## Repository Structure
-
+```markdown
 log-service/
 ├── terraform/
 ├── lambdas/
@@ -76,36 +76,36 @@ log-service/
 
 1. **Configure AWS CLI**
 ```batch
-> aws configure
+aws configure
 
 2. **Zip Lambda Functions**
 ```batch
-    > cd lambdas/ingest
-    > zip handler.zip handler.py
-    > cd ../read_recent
-    > zip handler.zip handler.py
-    > cd ../../terraform
+cd lambdas/ingest
+zip handler.zip handler.py
+cd ../read_recent
+zip handler.zip handler.py
+cd ../../terraform
 
 
 
 3. **Deploy with Terraform**
 ```batch
-    > terraform init
-    > terraform apply
+terraform init
+terraform apply
 
 
- - Confirm with yes
+- Confirm with yes
 
- - Terraform outputs:
+- Terraform outputs:
 
     - ingest_url
 
     - read_recent_url
 
 4. **Testing the Lambdas**
-
-    > cd tests
- - for ingest 
-    > python invoke_lambda_url.py
- - for read_recent
-    > python read_recent_lambda.py
+```powershell
+cd tests
+- for ingest 
+python invoke_lambda_url.py
+- for read_recent
+python read_recent_lambda.py
