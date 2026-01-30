@@ -104,8 +104,12 @@ terraform apply
 4. **Testing the Lambdas**
 ```powershell
 cd tests
+```
 - for ingest 
+```powershell
 python invoke_lambda_url.py
+```
 - for read_recent
+```powershell
 python read_recent_lambda.py
 ```
