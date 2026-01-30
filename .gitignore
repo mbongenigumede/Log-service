@@ -1,0 +1,19 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfplan
+
+
+# Python
+__pycache__/
+*.pyc
+
+# Lambda build artifacts
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+*.git
