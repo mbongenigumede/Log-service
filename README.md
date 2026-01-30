@@ -16,10 +16,10 @@ It provides:
 
 Client
 |
-| HTTPS (Lambda Function URL)
+| HTTP (Lambda Function URL)
 v
-Ingest Lambda ───> DynamoDB (log_entries)
-^
+Ingest Lambda ───▶ DynamoDB (log_entries)
+▲
 |
 ReadRecent Lambda
 
@@ -52,11 +52,11 @@ HTTP GET.
 ## Repository Structure
 
 log-service/
-├── terraform/ # Terraform IaC files
-├── lambdas/ # Lambda function source code
+├── terraform/
+├── lambdas/
 │ ├── ingest/
 │ └── read_recent/
-├── tests/ # Optional unit tests
+├── tests/
 └── README.md
 
 ## Prerequisites
@@ -75,22 +75,22 @@ log-service/
 ## Deployment Instructions
 
 1. **Configure AWS CLI**
-
-# bash
-aws configure
+> aws configure
 
 2. **Zip Lambda Functions**
-# bash 
-cd lambdas/ingest
-zip handler.zip handler.py
-cd ../read_recent
-zip handler.zip handler.py
-cd ../../terraform
+
+> cd lambdas/ingest
+> zip handler.zip handler.py
+> cd ../read_recent
+> zip handler.zip handler.py
+> cd ../../terraform
+
+
 
 3. **Deploy with Terraform**
-# bash 
-terraform init
-terraform apply
+> terraform init
+> terraform apply
+
 
  ``` Confirm with yes`
 
@@ -104,8 +104,8 @@ terraform apply
 
 # powershell
 
- cd tests
- ``` for ingest ` 
- python invoke_lambda_url.py
-
- ``` for read_recent `
+ > cd tests
+ - for ingest 
+ > python invoke_lambda_url.py
+ - for read_recent
+ > python read_recent_lambda.py
