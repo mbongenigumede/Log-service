@@ -79,33 +79,31 @@ log-service/
 
 2. **Zip Lambda Functions**
 
-> cd lambdas/ingest
-> zip handler.zip handler.py
-> cd ../read_recent
-> zip handler.zip handler.py
-> cd ../../terraform
+    > cd lambdas/ingest
+    > zip handler.zip handler.py
+    > cd ../read_recent
+    > zip handler.zip handler.py
+    > cd ../../terraform
 
 
 
 3. **Deploy with Terraform**
-> terraform init
-> terraform apply
+    > terraform init
+    > terraform apply
 
 
- ``` Confirm with yes`
+ - Confirm with yes
 
- ``` Terraform outputs:`
+ - Terraform outputs:
 
     > ingest_url
 
     > read_recent_url
 
-**Testing the Lambdas**
+4. **Testing the Lambdas**
 
-# powershell
-
- > cd tests
+    > cd tests
  - for ingest 
- > python invoke_lambda_url.py
+    > python invoke_lambda_url.py
  - for read_recent
- > python read_recent_lambda.py
+    > python read_recent_lambda.py
