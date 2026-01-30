@@ -23,8 +23,8 @@ Ingest Lambda  ───▶  DynamoDB (log_entries)
   |
 ReadRecent Lambda
 
+```
 
----
 
 - **Ingest Lambda**: Adds logs to the database via HTTP POST.
 - **ReadRecent Lambda**: Returns up to 100 most recent logs via 
