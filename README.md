@@ -23,6 +23,8 @@ Ingest Lambda ───▶ DynamoDB (log_entries)
 |
 ReadRecent Lambda
 
+```pgsql
+
 - **Ingest Lambda**: Adds logs to the database via HTTP POST.
 - **ReadRecent Lambda**: Returns up to 100 most recent logs via 
 HTTP GET.
@@ -50,7 +52,7 @@ HTTP GET.
 - **Query**: `ScanIndexForward=false` + `Limit=100` → retrieves newest logs efficiently
 
 ## Repository Structure
-```markdown
+
 log-service/
 ├── terraform/
 ├── lambdas/
