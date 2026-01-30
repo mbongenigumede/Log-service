@@ -1,6 +1,6 @@
 # Log-service
 Implement a simple log service that stores and retrieves log entries using an AWS database and two AWS Lambda functions.
-```markdown
+
 This repository contains a **fully Infrastructure-as-Code (IaC)** implementation of a simple log service using **AWS Lambda**, **DynamoDB**, and **Terraform**.  
 
 It provides:
@@ -10,20 +10,21 @@ It provides:
 - **DynamoDB**: Stores log entries efficiently.
 - **Terraform**: Automates deployment of all resources.
 
----
+
 
 ## Architecture
-
+```markdown
 Client
-|
-| HTTP (Lambda Function URL)
-v
-Ingest Lambda ───▶ DynamoDB (log_entries)
-▲
-|
+  |
+  | HTTP (Lambda Function URL)
+  v
+Ingest Lambda  ───▶  DynamoDB (log_entries)
+  ▲
+  |
 ReadRecent Lambda
 
 
+---
 
 - **Ingest Lambda**: Adds logs to the database via HTTP POST.
 - **ReadRecent Lambda**: Returns up to 100 most recent logs via 
@@ -32,7 +33,7 @@ HTTP GET.
 - **DynamoDB Table**: Optimized for fast retrieval of newest logs with single digit millisecond latency, serverless,easy to set up with lambda and IAM, secure even during availability zones failures.
 - **Terraform**: Creates Lambda functions, DynamoDB table, IAM roles, and Lambda Function URLs.
 
----
+
 
 ## Database Design
 
@@ -52,7 +53,7 @@ HTTP GET.
 - **Query**: `ScanIndexForward=false` + `Limit=100` → retrieves newest logs efficiently
 
 ## Repository Structure
-
+```markdown
 log-service/
 ├── terraform/
 ├── lambdas/
@@ -61,17 +62,13 @@ log-service/
 ├── tests/
 └── README.md
 
+---
 ## Prerequisites
 
 - AWS account with an IAM user with permissions for DynamoDB, Lambda, and IAM
 - AWS CLI installed and configured
 - Terraform installed
 - Python 3.11+ (for Lambda functions)
-
----
-
-
-
 
 
 ## Deployment Instructions
