@@ -62,7 +62,7 @@ log-service/
 ├── tests/
 └── README.md
 
----
+```
 ## Prerequisites
 
 - AWS account with an IAM user with permissions for DynamoDB, Lambda, and IAM
@@ -76,7 +76,7 @@ log-service/
 1. **Configure AWS CLI**
 ```batch
 aws configure
-
+```
 2. **Zip Lambda Functions**
 ```batch
 cd lambdas/ingest
@@ -84,14 +84,14 @@ zip handler.zip handler.py
 cd ../read_recent
 zip handler.zip handler.py
 cd ../../terraform
-
+```
 
 
 3. **Deploy with Terraform**
 ```batch
 terraform init
 terraform apply
-
+```
 
 - Confirm with yes
 
@@ -108,3 +108,4 @@ cd tests
 python invoke_lambda_url.py
 - for read_recent
 python read_recent_lambda.py
+```
