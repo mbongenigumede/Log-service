@@ -75,10 +75,11 @@ log-service/
 ## Deployment Instructions
 
 1. **Configure AWS CLI**
+```batch
 > aws configure
 
 2. **Zip Lambda Functions**
-
+```batch
     > cd lambdas/ingest
     > zip handler.zip handler.py
     > cd ../read_recent
@@ -88,6 +89,7 @@ log-service/
 
 
 3. **Deploy with Terraform**
+```batch
     > terraform init
     > terraform apply
 
@@ -96,9 +98,9 @@ log-service/
 
  - Terraform outputs:
 
-    > ingest_url
+    - ingest_url
 
-    > read_recent_url
+    - read_recent_url
 
 4. **Testing the Lambdas**
 
