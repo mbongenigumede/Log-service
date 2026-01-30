@@ -1,6 +1,6 @@
 # Log-service
 Implement a simple log service that stores and retrieves log entries using an AWS database and two AWS Lambda functions.
-
+```markdown
 This repository contains a **fully Infrastructure-as-Code (IaC)** implementation of a simple log service using **AWS Lambda**, **DynamoDB**, and **Terraform**.  
 
 It provides:
