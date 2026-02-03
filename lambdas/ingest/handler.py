@@ -1,7 +1,7 @@
 import json, uuid, os
 from datetime import datetime
 import boto3
-
+ 
 db = boto3.resource("dynamodb").Table(os.environ["TABLE_NAME"])
 
 def handler(event, context):

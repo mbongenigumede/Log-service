@@ -16,19 +16,20 @@ It provides:
 ```markdown
 Client
   |
-  | HTTP (Lambda Function URL)
+  | HTTP (Lambda Function URL) Write logs
   v
 Ingest Lambda  ───▶  DynamoDB (log_entries)
-  ▲
-  |
-ReadRecent Lambda
+                        ^
+                        |   Read Logs
+                        v
+                ReadRecent Lambda
 
 ```
 
 
 - **Ingest Lambda**: Adds logs to the database via HTTP POST.
 - **ReadRecent Lambda**: Returns up to 100 most recent logs via 
-HTTP GET.
+HTTP GET with IAM authethication.
 
 - **DynamoDB Table**: Optimized for fast retrieval of newest logs with single digit millisecond latency, serverless,easy to set up with lambda and IAM, secure even during availability zones failures.
 - **Terraform**: Creates Lambda functions, DynamoDB table, IAM roles, and Lambda Function URLs.
